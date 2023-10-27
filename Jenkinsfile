@@ -8,7 +8,7 @@ pipeline {
         
       stage('checkout') {
            steps {
-             git branch: 'ccwu-at-pivotal-patch-1',url:'https://github.com/iamsr16/CodeSign.git'
+             git branch: 'master',url:'https://github.com/iamsr16/CodeSign.git'
              
           }
         }
