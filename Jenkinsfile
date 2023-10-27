@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        dotnet 'C:/Program Files/dotnet/dotnet.exe'
+        dotnet = 'C:/Program Files/dotnet/dotnet.exe'
          }
   stages{
         
@@ -14,24 +14,24 @@ pipeline {
         }
       stage('Restore packages'){
             steps { 
-                bat "dotnet restore /CodeSign"
+                bat "dotnet restore "
                }
             }
             
      stage('Clean'){
            steps {
-                  bat "dotnet clean /CodeSign"
+                  bat "dotnet clean"
                 }
            }
    
    stage('Build'){
         steps{
-          bat "dotnet build /CodeSign --configuration Release"
+          bat "dotnet build --configuration Release"
          }
      } 
  stage('Publish'){
      steps{
-       bat "dotnet publish /CodeSign "
+       bat "dotnet publish "
      }
    }
   }
